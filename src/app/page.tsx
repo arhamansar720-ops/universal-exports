@@ -205,23 +205,13 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="video-embed-wrap">
-              <div className="video-placeholder">
-                <div className="video-placeholder-bg">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="https://images.pexels.com/photos/1427541/pexels-photo-1427541.jpeg?auto=compress&cs=tinysrgb&w=900"
-                    alt="Universal Exports — trade video"
-                  />
-                  <div className="video-placeholder-ov" />
-                  <a href="https://www.youtube.com/@universalexports" target="_blank" rel="noopener noreferrer" className="video-play-btn" aria-label="Watch on YouTube">
-                    <svg viewBox="0 0 68 48" width="68" height="48" fill="none">
-                      <rect width="68" height="48" rx="12" fill="#E8611A"/>
-                      <path d="M28 16l20 16-20 16V16z" fill="white"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
+                        <div className="video-embed-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/igh3nmk_aUw"
+                title="Pakistan Chamber of Commerce &amp; Trade, USA — Mubashir Chaudhry, DPH"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>
