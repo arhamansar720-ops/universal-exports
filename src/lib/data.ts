@@ -1,4 +1,4 @@
-export interface Service {
+undefinedexport interface Service {
   slug: string;
   title: string;
   img: string;
