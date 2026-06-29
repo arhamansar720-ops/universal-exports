@@ -59,44 +59,8 @@ export default function Navbar() {
     <nav className={`navbar${scrolled ? ' is-scrolled' : ''}`}>
       <div className="navbar-inner">
         <Link href="/" className="navbar-logo">
-          <svg width="44" height="44" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <g opacity="0.92">
-              <path d="M55 8 Q80 2 88 18 Q72 10 55 14 Z" fill="url(#sw1)"/>
-              <path d="M62 5 Q88 -2 95 20 Q80 8 62 12 Z" fill="url(#sw2)" opacity="0.7"/>
-              <path d="M45 92 Q20 98 12 82 Q28 90 45 86 Z" fill="url(#sw1)"/>
-              <path d="M38 95 Q12 102 5 80 Q20 92 38 88 Z" fill="url(#sw2)" opacity="0.7"/>
-              <path d="M18 30 Q4 14 16 4 Q16 22 24 34 Z" fill="url(#sw1)"/>
-              <path d="M12 22 Q-2 4 12 -4 Q10 16 20 28 Z" fill="url(#sw2)" opacity="0.7"/>
-              <path d="M82 70 Q96 86 84 96 Q84 78 76 66 Z" fill="url(#sw1)"/>
-              <path d="M88 78 Q102 96 88 104 Q90 84 80 72 Z" fill="url(#sw2)" opacity="0.7"/>
-            </g>
-            <circle cx="50" cy="50" r="32" fill="url(#globeGrad)"/>
-            <circle cx="50" cy="50" r="32" fill="url(#globeSheen)" opacity="0.5"/>
-            <g fill="white" opacity="0.92">
-              <path d="M36 24 Q42 22 46 26 Q50 24 52 28 Q56 26 58 30 Q60 36 58 42 Q54 46 50 44 Q46 48 42 46 Q38 48 36 44 Q32 40 30 34 Q28 28 32 24 Z"/>
-              <path d="M42 52 Q48 50 52 54 Q56 58 54 66 Q52 74 46 76 Q40 74 38 68 Q36 60 38 54 Z"/>
-            </g>
-            <defs>
-              <linearGradient id="globeGrad" x1="20%" y1="15%" x2="80%" y2="85%">
-                <stop offset="0%" stopColor="#5b9ec9"/>
-                <stop offset="50%" stopColor="#2b6a9a"/>
-                <stop offset="100%" stopColor="#1a4d73"/>
-              </linearGradient>
-              <radialGradient id="globeSheen" cx="35%" cy="30%" r="55%">
-                <stop offset="0%" stopColor="white" stopOpacity="0.25"/>
-                <stop offset="100%" stopColor="white" stopOpacity="0"/>
-              </radialGradient>
-              <linearGradient id="sw1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#d0d5dc"/>
-                <stop offset="50%" stopColor="#a8aeb8"/>
-                <stop offset="100%" stopColor="#c8cdd6"/>
-              </linearGradient>
-              <linearGradient id="sw2" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#e8eaed"/>
-                <stop offset="100%" stopColor="#9aa0ab"/>
-              </linearGradient>
-            </defs>
-          </svg>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.png" alt="Universal Exports" width={44} height={44} style={{ objectFit: 'contain' }} />
           <span>
             <div className="navbar-logo-txt" style={{ color: 'white' }}>UNIVERSAL</div>
             <div className="navbar-logo-sub" style={{ color: 'rgba(255,255,255,0.65)' }}>Exports Pvt. Ltd.</div>
