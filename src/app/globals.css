@@ -373,11 +373,12 @@ ul, ol { list-style: none; }
 .footer-newsletter-btn { background: var(--primary); color: var(--white); border: none; border-radius: 100px; padding: 13px 24px; font-size: 14px; font-weight: 600; font-family: var(--font); cursor: pointer; transition: opacity .2s; margin: 3px; }
 .footer-newsletter-btn:hover { opacity: .88; }
 .footer-divider { height: 1px; background: rgba(255,255,255,0.08); margin: 24px 0; }
-.footer-mid-row { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 8px 0; }
-.footer-links-label { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; }
-.footer-useful-links { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
-.footer-useful-links a { font-size: 14px; color: rgba(255,255,255,0.60); transition: color .15s; }
-.footer-useful-links a:hover { color: var(--white); }
+.footer-mid-row { display: flex; align-items: flex-start; gap: 48px; padding: 8px 0; }
+.footer-col { flex: 1; }
+.footer-col-label { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.40); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
+.footer-col-link { display: block; font-size: 14px; color: rgba(255,255,255,0.60); margin-bottom: 10px; transition: color .15s; }
+.footer-col-link:hover { color: var(--white); }
+.footer-seal { flex-shrink: 0; display: flex; align-items: center; justify-content: flex-end; padding-top: 4px; }
 .footer-bottom { padding-top: 24px; font-size: 13px; color: rgba(255,255,255,0.40); text-align: center; }
 .footer-bottom strong { color: rgba(255,255,255,0.65); font-weight: 600; }
 
@@ -696,8 +697,9 @@ a.contact-detail-val:hover { color: var(--primary); }
   .footer { padding: 48px 0 24px; }
   .footer-top-row { flex-direction: column; gap: 32px; padding-bottom: 24px; }
   .footer-newsletter-input { min-width: 0; width: 100%; }
-  .footer-mid-row { flex-direction: column; align-items: flex-start; gap: 20px; }
-  .footer-useful-links { gap: 12px 24px; }
+  .footer-mid-row { flex-wrap: wrap; gap: 28px; }
+  .footer-col { flex: 1 1 40%; }
+  .footer-seal { width: 100%; justify-content: flex-start; }
   .values-grid { grid-template-columns: 1fr; gap: 12px; }
   .value-card { padding: 24px; }
   .team-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
