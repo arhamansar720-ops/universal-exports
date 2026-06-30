@@ -149,22 +149,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── CTA BAND ────────────────────────────────────────── */}
-      <section className="cta-band">
-        <div className="cta-band-center">
-          <h2>Trusted by Businesses That Value Reliability</h2>
-          <p>We are committed to delivering exceptional service and efficient logistics solutions.</p>
-          <Link href="/contact" className="cta-band-btn">
-            Book a Call
-            <span className="arrow-circ" style={{ background: 'rgba(255,255,255,0.20)' }}>
-              <svg viewBox="0 0 14 14" fill="none">
-                <path d="M2 7h10M8 4l3 3-3 3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </span>
-          </Link>
-        </div>
-      </section>
-
       {/* ── SERVICES ─────────────────────────────────────────── */}
       <section className="services-sec">
         <div className="services-inner">
@@ -192,27 +176,56 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── CTA BAND ────────────────────────────────────────── */}
+      <section className="cta-band">
+        <div className="cta-band-center">
+          <h2>Trusted by Businesses That Value Reliability</h2>
+          <p>We are committed to delivering exceptional service and efficient logistics solutions.</p>
+          <Link href="/contact" className="cta-band-btn">
+            Book a Call
+            <span className="arrow-circ" style={{ background: 'rgba(255,255,255,0.20)' }}>
+              <svg viewBox="0 0 14 14" fill="none">
+                <path d="M2 7h10M8 4l3 3-3 3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </span>
+          </Link>
+        </div>
+      </section>
+
       {/* ── VIDEO ─────────────────────────────────────────────── */}
       <section className="video-sec">
+        <div className="video-bg">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://images.pexels.com/photos/2226458/pexels-photo-2226458.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            alt="Trade and Commerce background"
+          />
+          <div className="video-bg-ov" />
+        </div>
         <div className="video-inner">
-          <div className="video-card">
-            <div className="video-card-header">
-              <div className="video-card-author">
-                <div className="video-av">MC</div>
-                <div>
-                  <div className="video-org">Pakistan Chamber of Commerce &amp; Trade, USA.</div>
-                  <div className="video-name">Mubashir Chaudhry, DPH</div>
-                </div>
+          <div className="video-hdr">
+            <div className="video-hdr-left">
+              <div className="video-av">MC</div>
+              <div>
+                <div className="video-org">Pakistan Chamber of Commerce &amp; Trade, USA.</div>
+                <div className="video-name">Mubashir Chaudhry, DrPH</div>
               </div>
             </div>
-                        <div className="video-embed-wrap">
-              <iframe
-                src="https://www.youtube.com/embed/igh3nmk_aUw"
-                title="Pakistan Chamber of Commerce &amp; Trade, USA — Mubashir Chaudhry, DPH"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+            <div className="video-hdr-logo">
+              <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" width="56" height="56">
+                <circle cx="28" cy="28" r="27" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" fill="rgba(255,255,255,0.08)"/>
+                <text x="28" y="22" textAnchor="middle" fill="white" fontSize="9" fontWeight="700" fontFamily="Figtree,sans-serif" letterSpacing="1">PCC&amp;T</text>
+                <text x="28" y="34" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="8" fontWeight="600" fontFamily="Figtree,sans-serif" letterSpacing="2">USA</text>
+              </svg>
             </div>
+          </div>
+          <div className="video-embed-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/igh3nmk_aUw"
+              title="Pakistan Chamber of Commerce &amp; Trade, USA — Mubashir Chaudhry, DrPH"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
           </div>
         </div>
       </section>
