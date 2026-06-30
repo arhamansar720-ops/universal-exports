@@ -738,3 +738,14 @@ a.contact-detail-val:hover { color: var(--primary); }
   a, button { min-height: 44px; }
   .navbar-mobile-btn, .faq-q { min-height: unset; }
 }
+
+/* ── FOOTER COLUMNS (mid-row) ────────────── */
+.footer-col { display: flex; flex-direction: column; gap: 10px; }
+.footer-col-label { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+.footer-col-link { font-size: 14px; color: rgba(255,255,255,0.60); display: block; transition: color .15s; }
+.footer-col-link:hover { color: var(--white); }
+.footer-seal { display: flex; align-items: center; justify-content: center; opacity: 0.85; }
+@media (max-width: 768px) {
+  .footer-col { width: 100%; }
+  .footer-seal { justify-content: flex-start; }
+}
