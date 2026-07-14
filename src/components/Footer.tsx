@@ -7,19 +7,33 @@ export default function Footer() {
         {/* Top row: logo+social LEFT, newsletter RIGHT */}
         <div className="footer-top-row">
           <div className="footer-brand">
-            <div className="footer-logo">
-              <span className="footer-logo-icon">
-                <svg viewBox="0 0 17 17" fill="none">
-                  <circle cx="8.5" cy="8.5" r="6" stroke="white" strokeWidth="1.3"/>
-                  <path d="M2.5 8.5h12" stroke="white" strokeWidth="1.1"/>
-                  <path d="M8.5 2.5c-1.7 1.7-2.5 3.8-2.5 6s.8 4.3 2.5 6" stroke="white" strokeWidth="1.1"/>
-                  <path d="M8.5 2.5c1.7 1.7 2.5 3.8 2.5 6s-.8 4.3-2.5 6" stroke="white" strokeWidth="1.1"/>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '24px', marginBottom: '16px' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.png" alt="Universal Exports" style={{ height: 56, width: 'auto', objectFit: 'contain' }} />
+              <div className="footer-seal">
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" width="80" height="80">
+                  <circle cx="50" cy="50" r="47" stroke="#E8611A" strokeWidth="2.5"/>
+                  <circle cx="50" cy="50" r="39" stroke="#E8611A" strokeWidth="1.5"/>
+                  <rect x="26" y="26" width="22" height="14" rx="1" fill="#B22234"/>
+                  <rect x="26" y="29.3" width="22" height="1.8" fill="white"/>
+                  <rect x="26" y="32.6" width="22" height="1.8" fill="white"/>
+                  <rect x="26" y="35.9" width="22" height="1.8" fill="white"/>
+                  <rect x="26" y="26" width="9" height="8" fill="#3C3B6E"/>
+                  <circle cx="64" cy="33" r="8" fill="#01411C"/>
+                  <circle cx="61.5" cy="31" r="5.5" fill="#01411C"/>
+                  <path d="M68 28 L64.5 36 L70 31 Z" fill="white" opacity="0.9"/>
+                  <text x="50" y="57" textAnchor="middle" fill="white" fontSize="7" fontWeight="800" fontFamily="sans-serif">PCC&amp;T</text>
+                  <text x="50" y="66" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="5.5" fontFamily="sans-serif">USA</text>
+                  <path id="topArc" d="M 14 50 A 36 36 0 0 1 86 50" fill="none"/>
+                  <text fontSize="5.5" fill="rgba(255,255,255,0.6)" fontFamily="sans-serif">
+                    <textPath href="#topArc" startOffset="10%">CHAMBER OF COMMERCE &amp; TRADE</textPath>
+                  </text>
+                  <path id="botArc" d="M 18 58 A 36 36 0 0 0 82 58" fill="none"/>
+                  <text fontSize="5.5" fill="rgba(255,255,255,0.6)" fontFamily="sans-serif">
+                    <textPath href="#botArc" startOffset="15%">PAKISTAN · USA</textPath>
+                  </text>
                 </svg>
-              </span>
-              <span>
-                <div className="footer-logo-name">UNIVERSAL</div>
-                <div className="footer-logo-sub">EXPORTS (PRIVATE) LIMITED</div>
-              </span>
+              </div>
             </div>
             <div className="footer-socials">
               <a href="#" className="footer-soc" aria-label="Facebook">
@@ -56,7 +70,7 @@ export default function Footer() {
 
         <div className="footer-divider" />
 
-        {/* Middle row: 3 link columns + PCCAT seal */}
+        {/* Middle row: 3 link columns */}
         <div className="footer-mid-row">
           <div className="footer-col">
             <p className="footer-col-label">Services</p>
@@ -76,30 +90,6 @@ export default function Footer() {
             <p className="footer-col-label">Legal</p>
             <Link href="#" className="footer-col-link">Terms &amp; Conditions</Link>
             <Link href="#" className="footer-col-link">Privacy Policy</Link>
-          </div>
-          <div className="footer-seal">
-            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" width="90" height="90">
-              <circle cx="50" cy="50" r="47" stroke="#E8611A" strokeWidth="2.5"/>
-              <circle cx="50" cy="50" r="39" stroke="#E8611A" strokeWidth="1.5"/>
-              <rect x="26" y="26" width="22" height="14" rx="1" fill="#B22234"/>
-              <rect x="26" y="29.3" width="22" height="1.8" fill="white"/>
-              <rect x="26" y="32.6" width="22" height="1.8" fill="white"/>
-              <rect x="26" y="35.9" width="22" height="1.8" fill="white"/>
-              <rect x="26" y="26" width="9" height="8" fill="#3C3B6E"/>
-              <circle cx="64" cy="33" r="8" fill="#01411C"/>
-              <circle cx="61.5" cy="31" r="5.5" fill="#01411C"/>
-              <path d="M68 28 L64.5 36 L70 31 Z" fill="white" opacity="0.9"/>
-              <text x="50" y="57" textAnchor="middle" fill="white" fontSize="7" fontWeight="800" fontFamily="sans-serif">PCC&amp;T</text>
-              <text x="50" y="66" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="5.5" fontFamily="sans-serif">USA</text>
-              <path id="topArc" d="M 14 50 A 36 36 0 0 1 86 50" fill="none"/>
-              <text fontSize="5.5" fill="rgba(255,255,255,0.6)" fontFamily="sans-serif">
-                <textPath href="#topArc" startOffset="10%">CHAMBER OF COMMERCE &amp; TRADE</textPath>
-              </text>
-              <path id="botArc" d="M 18 58 A 36 36 0 0 0 82 58" fill="none"/>
-              <text fontSize="5.5" fill="rgba(255,255,255,0.6)" fontFamily="sans-serif">
-                <textPath href="#botArc" startOffset="15%">PAKISTAN · USA</textPath>
-              </text>
-            </svg>
           </div>
         </div>
 
