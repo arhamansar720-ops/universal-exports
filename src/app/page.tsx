@@ -5,8 +5,8 @@ import HeroCarousel from '@/components/HeroCarousel';
 import { SERVICES } from '@/lib/data';
 
 export const metadata = {
-  title: 'Universal Exports Limited â Reliable Export Solutions',
-  description: 'Expert export services â Fast, professional, and affordable.',
+  title: 'Universal Exports Limited — Reliable Export Solutions',
+  description: 'Expert export services — Fast, professional, and affordable.',
 };
 
 export default function HomePage() {
@@ -14,7 +14,7 @@ export default function HomePage() {
     <>
       <Navbar />
 
-      {/* ââ HERO ââââââââââââââââââââââââââââââââââââââââââââââââ */}
+      {/* ── HERO ──────────────────────────────────────────────── */}
       <section className="hero-wrap">
         <div className="hero-body">
           <div className="hero-pill">
@@ -37,7 +37,7 @@ export default function HomePage() {
             Reliable Export Solutions,<br />Anytime you Need
           </h1>
           <p className="hero-sub">
-            Expert export services â Fast, professional, and affordable.
+            Expert export services — Fast, professional, and affordable.
           </p>
           <Link href="/contact" className="hero-btn">
             Book a Free Call
@@ -51,7 +51,7 @@ export default function HomePage() {
         <HeroCarousel />
       </section>
 
-      {/* ââ PARTNERS âââââââââââââââââââââââââââââââââââââââââââ */}
+      {/* ── PARTNERS ─────────────────────────────────────────── */}
       <section className="partners-sec">
         <div className="partners-inner">
           <p className="partners-lbl">We working with more than 500+ companies</p>
@@ -65,7 +65,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ââ STATS BAR ââââââââââââââââââââââââââââââââââââââââââ */}
+      {/* ── STATS BAR ────────────────────────────────────────── */}
       <div className="stats-bar">
         <div className="stats-inner">
           {[
@@ -83,7 +83,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* ââ ABOUT ââââââââââââââââââââââââââââââââââââââââââââ */}
+      {/* ── ABOUT ──────────────────────────────────────────── */}
       <section className="about-sec">
         <div className="about-inner">
           <div>
@@ -113,7 +113,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ââ WHY CHOOSE US ââââââââââââââââââââââââââââââââââââ */}
+      {/* ── WHY CHOOSE US ──────────────────────────────────── */}
       <section className="why-sec" id="why-choose-us">
         <div className="why-inner">
           <div className="why-img-wrap">
@@ -157,7 +157,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ââ WHY-CHOOSE-US CTA âââââââââââââââââââââââââââââââââââ */}
+      {/* ── WHY-CHOOSE-US CTA ─────────────────────────────────── */}
       <section className="social-cta-sec">
         <div className="social-cta-box">
           <h2 className="social-cta-h2">Trusted by Businesses That Value Reliability</h2>
@@ -176,7 +176,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ââ SERVICES âââââââââââââââââââââââââââââââââââââââââââ */}
+      {/* ── SERVICES ─────────────────────────────────────────── */}
       <section className="services-sec">
         <div className="services-inner">
           <div className="sec-center">
@@ -195,7 +195,7 @@ export default function HomePage() {
                 <div className="svc-card-body">
                   <h3 className="svc-card-title">{s.title}</h3>
                   <p className="svc-card-desc">{s.desc}</p>
-                  <span className="svc-card-link">Learn More â</span>
+                  <span className="svc-card-link">Learn More →</span>
                 </div>
               </Link>
             ))}
@@ -203,7 +203,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ââ CTA BAND ââââââââââââââââââââââââââââââââââââââââââ */}
+      {/* ── CTA BAND ────────────────────────────────────────── */}
       <section className="cta-band">
         <div className="cta-band-center">
           <h2>Trusted by Businesses That Value Reliability</h2>
@@ -219,7 +219,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ââ VIDEO âââââââââââââââââââââââââââââââââââââââââââââââ */}
+      {/* ── VIDEO ─────────────────────────────────────────────── */}
       <section className="video-sec">
         <div className="video-bg">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -249,7 +249,7 @@ export default function HomePage() {
           <div className="video-embed-wrap">
             <iframe
               src="https://www.youtube.com/embed/igh3nmk_aUw"
-              title="Pakistan Chamber of Commerce &amp; Trade, USA â Mubashir Chaudhry, DrPH"
+              title="Pakistan Chamber of Commerce &amp; Trade, USA — Mubashir Chaudhry, DrPH"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
@@ -257,7 +257,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ââ IMAGE CTA ââââââââââââââââââââââââââââââââââââââââââ */}
+      {/* ── IMAGE CTA ────────────────────────────────────────── */}
       <section className="img-cta-sec">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="https://images.pexels.com/photos/906982/pexels-photo-906982.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Container yard and cargo" className="cta-bg" />
