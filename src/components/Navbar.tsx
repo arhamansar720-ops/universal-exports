@@ -60,11 +60,7 @@ export default function Navbar() {
       <div className="navbar-inner">
         <Link href="/" className="navbar-logo">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="Universal Exports" width={44} height={44} style={{ objectFit: 'contain' }} />
-          <span>
-            <div className="navbar-logo-txt" style={{ color: 'white' }}>UNIVERSAL</div>
-            <div className="navbar-logo-sub" style={{ color: 'rgba(255,255,255,0.65)' }}>Exports Pvt. Ltd.</div>
-          </span>
+          <img src="/logo.png" alt="Universal Exports" width={174} height={56} style={{ height: 56, width: 'auto', objectFit: 'contain' }} />
         </Link>
 
         <button
