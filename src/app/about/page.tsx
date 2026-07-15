@@ -126,7 +126,8 @@ export default function AboutPage() {
               logistics, trade finance, and supply chain management.
             </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, marginTop: 0 }}>
+          {/* team-grid: CSS class handles responsive columns (4→2→2 at breakpoints) */}
+          <div className="team-grid">
             {[
               { init: 'AO', name: 'Adebayo Okafor', role: 'Chief Executive Officer', bio: '20+ years in international trade. Former VP at Maersk West Africa.' },
               { init: 'EM', name: 'Emmanuel Mensah', role: 'Chief Operations Officer', bio: 'Expert in port operations and container logistics across West Africa.' },
