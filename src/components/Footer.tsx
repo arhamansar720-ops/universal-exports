@@ -9,24 +9,27 @@ export default function Footer() {
         <div className="footer-top-row">
 
           <div className="footer-brand">
-            {/* Main logo */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/logo.png"
-              alt="Universal Exports (Private) Limited"
-              height={56}
-              style={{ objectFit: 'contain', display: 'block' }}
-            />
+            {/* Logos side-by-side */}
+            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 24 }}>
+              {/* Main logo */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo.png"
+                alt="Universal Exports (Private) Limited"
+                height={56}
+                style={{ objectFit: 'contain', display: 'block' }}
+              />
 
-            {/* PCC&T seal */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/pcct-seal.svg"
-              alt="Pakistan Chamber of Commerce & Trade — USA"
-              width={80}
-              height={80}
-              style={{ display: 'block' }}
-            />
+              {/* PCC&T seal */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/pcct-seal.svg"
+                alt="Pakistan Chamber of Commerce & Trade — USA"
+                width={76}
+                height={76}
+                style={{ display: 'block' }}
+              />
+            </div>
 
             {/* Social icons */}
             <div className="footer-socials">
