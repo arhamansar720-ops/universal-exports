@@ -149,7 +149,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <div className="why-feat-title">Transparent Pricing</div>
-                  <div className="why-feat-desc">No hidden fees or unexpected costs. We provide clear, competitive pricing so you always know exactly what you're paying for.</div>
+                  <div className="why-feat-desc">No hidden fees or unexpected costs. We provide clear, competitive pricing so you always know exactly what you are paying for.</div>
                 </div>
               </div>
             </div>
@@ -195,7 +195,7 @@ export default function HomePage() {
                 <div className="svc-card-body">
                   <h3 className="svc-card-title">{s.title}</h3>
                   <p className="svc-card-desc">{s.desc}</p>
-                  <span className="svc-card-link">Learn More →</span>
+                  <span className="svc-card-link">Learn More &rarr;</span>
                 </div>
               </Link>
             ))}
@@ -203,25 +203,24 @@ export default function HomePage() {
         </div>
       </section>
 
-
       {/* ── HOW IT WORKS ──────────────────────────────────────── */}
-      <section id="how-it-works" style={{ padding: '96px 0', background: '#fff' }}>
-        <div style={{ maxWidth: 1160, margin: '0 auto', padding: '0 40px' }}>
+      <section className="how-works-sec" id="how-it-works">
+        <div className="how-works-inner">
           <div className="sec-center" style={{ marginBottom: 64 }}>
             <span className="sec-tag">How It Works</span>
             <h2 className="sec-h2">Simple Steps to Global Shipping</h2>
-            <p className="sec-sub">From quote to delivery — we handle every step so you don&apos;t have to.</p>
+            <p className="sec-sub">From quote to delivery &mdash; we handle every step so you do not have to.</p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32, position: 'relative' }}>
+          <div className="how-works-grid">
             {[
               { num: '01', title: 'Request a Quote', desc: 'Share your shipment details and destination. Our team responds with a transparent, competitive quote within 2 business hours.' },
-              { num: '02', title: 'Documentation & Compliance', desc: 'We manage all export documentation, customs filings, and regulatory requirements — keeping your cargo compliant at every checkpoint.' },
+              { num: '02', title: 'Documentation & Compliance', desc: 'We manage all export documentation, customs filings, and regulatory requirements, keeping your cargo compliant at every checkpoint.' },
               { num: '03', title: 'Shipment & Delivery', desc: 'Your cargo is loaded, tracked in real-time, and delivered on schedule. You receive updates at every stage of the journey.' },
             ].map((step) => (
-              <div key={step.num} style={{ background: '#F9F9F7', borderRadius: 20, padding: '40px 32px', position: 'relative' }}>
-                <div style={{ fontSize: 48, fontWeight: 800, color: 'var(--primary)', opacity: 0.18, lineHeight: 1, marginBottom: 20, fontFamily: 'var(--font)' }}>{step.num}</div>
-                <h3 style={{ fontSize: 20, fontWeight: 700, color: 'var(--dark)', marginBottom: 14, fontFamily: 'var(--font)' }}>{step.title}</h3>
-                <p style={{ fontSize: 15, color: '#666', lineHeight: 1.7, fontFamily: 'var(--font)' }}>{step.desc}</p>
+              <div key={step.num} className="how-works-card">
+                <div className="how-works-num">{step.num}</div>
+                <h3 className="how-works-title">{step.title}</h3>
+                <p className="how-works-desc">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -274,7 +273,7 @@ export default function HomePage() {
           <div className="video-embed-wrap">
             <iframe
               src="https://www.youtube.com/embed/igh3nmk_aUw"
-              title="Pakistan Chamber of Commerce &amp; Trade, USA — Mubashir Chaudhry, DrPH"
+              title="Pakistan Chamber of Commerce &amp; Trade, USA"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
