@@ -105,10 +105,10 @@ export default function AboutPage() {
               { icon: '🌍', title: 'Global Mindset', desc: 'We think internationally from day one, with deep knowledge of global trade corridors and international regulations across all major markets.' },
               { icon: '✅', title: 'Compliance', desc: 'We maintain the highest standards of regulatory compliance, protecting our clients from penalties and ensuring smooth customs clearance.' },
             ].map((v) => (
-              <div key={v.title} className="value-card">
-                <div className="value-icon">{v.icon}</div>
-                <div className="value-title">{v.title}</div>
-                <div className="value-desc">{v.desc}</div>
+              <div key={v.title} className="val-card">
+                <div style={{ fontSize: 28, marginBottom: 16 }}>{v.icon}</div>
+                <h3>{v.title}</h3>
+                <p>{v.desc}</p>
               </div>
             ))}
           </div>
@@ -126,18 +126,24 @@ export default function AboutPage() {
               logistics, trade finance, and supply chain management.
             </p>
           </div>
-          <div className="team-grid">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, marginTop: 0 }}>
             {[
               { init: 'AO', name: 'Adebayo Okafor', role: 'Chief Executive Officer', bio: '20+ years in international trade. Former VP at Maersk West Africa.' },
               { init: 'EM', name: 'Emmanuel Mensah', role: 'Chief Operations Officer', bio: 'Expert in port operations and container logistics across West Africa.' },
               { init: 'PN', name: 'Priya Nair', role: 'Head of Customs & Compliance', bio: 'Certified customs broker with 15 years in Nigerian trade regulations.' },
               { init: 'AC', name: 'Amaka Chukwu', role: 'Head of Business Development', bio: 'Drives strategic partnerships and new market development across Africa.' },
             ].map((m) => (
-              <div key={m.name} className="team-card">
-                <div className="team-av">{m.init}</div>
-                <div className="team-name">{m.name}</div>
-                <div className="team-role">{m.role}</div>
-                <div className="team-bio">{m.bio}</div>
+              <div key={m.name} className="val-card" style={{ textAlign: 'center' }}>
+                <div style={{
+                  width: 64, height: 64, borderRadius: '50%',
+                  background: 'var(--primary)', color: 'var(--white)',
+                  fontSize: 20, fontWeight: 700,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  margin: '0 auto 20px'
+                }}>{m.init}</div>
+                <h3 style={{ fontSize: 17, fontWeight: 700, color: 'var(--dark)', marginBottom: 4 }}>{m.name}</h3>
+                <div style={{ fontSize: 13, color: 'var(--primary)', fontWeight: 600, marginBottom: 14 }}>{m.role}</div>
+                <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.6 }}>{m.bio}</p>
               </div>
             ))}
           </div>
