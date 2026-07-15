@@ -135,7 +135,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── FAQ ──────────────────────────────────── */}
-      <section style={{ padding: '80px 0' }}>
+      <section id="faq" style={{ padding: '80px 0' }}>
         <div style={{ maxWidth: 760, margin: '0 auto', padding: '0 40px' }}>
           <div className="sec-center">
             <span className="sec-tag">FAQ</span>
