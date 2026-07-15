@@ -870,3 +870,52 @@ a.contact-detail-val:hover { color: var(--primary); }
   .video-org { font-size: 13px; }
   .video-name { font-size: 12px; }
 }
+
+/* ── HOW IT WORKS (responsive) ─────────── */
+.how-works-sec { padding: 96px 0; background: #fff; }
+.how-works-inner { max-width: 1160px; margin: 0 auto; padding: 0 40px; }
+.how-works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  position: relative;
+}
+.how-works-card {
+  background: #F9F9F7;
+  border-radius: 20px;
+  padding: 40px 32px;
+  position: relative;
+}
+.how-works-num {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--primary);
+  opacity: 0.18;
+  line-height: 1;
+  margin-bottom: 20px;
+  font-family: var(--font);
+}
+.how-works-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 14px;
+  font-family: var(--font);
+}
+.how-works-desc {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.7;
+  font-family: var(--font);
+}
+@media (max-width: 1024px) {
+  .how-works-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+}
+@media (max-width: 768px) {
+  .how-works-sec { padding: 64px 0; }
+  .how-works-inner { padding: 0 20px; }
+  .how-works-grid { grid-template-columns: 1fr; gap: 16px; }
+  .how-works-card { padding: 28px 24px; }
+  .how-works-num { font-size: 36px; }
+  .how-works-title { font-size: 18px; }
+}
