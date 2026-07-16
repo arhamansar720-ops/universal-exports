@@ -5,33 +5,24 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-inner">
 
-        {/* ── TOP ROW: brand+social LEFT · newsletter RIGHT ── */}
-        <div className="footer-top-row">
+        {/* ── TOP: brand left · link columns right ── */}
+        <div className="footer-top">
 
           <div className="footer-brand">
-            {/* Logos side-by-side */}
-            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 24 }}>
+            <div className="footer-brand-logo">
               {/* Main logo */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/logo.png"
                 alt="Universal Exports (Private) Limited"
-                height={56}
-                style={{ objectFit: 'contain', display: 'block' }}
-              />
-
-              {/* PCC&T seal */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/pcct-seal.svg"
-                alt="Pakistan Chamber of Commerce & Trade — USA"
-                width={76}
-                height={76}
-                style={{ display: 'block' }}
+                height={60}
+                style={{ objectFit: 'contain', display: 'block', filter: 'brightness(0) invert(1)' }}
               />
             </div>
-
-            {/* Social icons */}
+            <p className="footer-brand-desc">
+              Nigeria&apos;s trusted export partner. Connecting businesses to global markets with
+              reliable freight, customs clearance, and trade compliance services since 2008.
+            </p>
             <div className="footer-socials">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="footer-soc" aria-label="Facebook">
                 <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
@@ -56,46 +47,47 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="footer-newsletter">
-            <p className="footer-newsletter-title">Subscribe to our newsletter!</p>
-            <div className="footer-newsletter-form">
-              <input type="email" placeholder="Enter your email" className="footer-newsletter-input" />
-              <button className="footer-newsletter-btn">Subscribe</button>
+          <div className="footer-links">
+            <div className="footer-col">
+              <p className="footer-col-label">Services</p>
+              <Link href="/services/ocean-freight" className="footer-col-link">Ocean Freight</Link>
+              <Link href="/services/air-freight" className="footer-col-link">Air Freight</Link>
+              <Link href="/services/customs-clearance" className="footer-col-link">Customs Clearance</Link>
+              <Link href="/services/container-cargo" className="footer-col-link">Container Cargo</Link>
+              <Link href="/services/export-documentation" className="footer-col-link">Export Documentation</Link>
+              <Link href="/services/supply-chain" className="footer-col-link">Supply Chain</Link>
+            </div>
+            <div className="footer-col">
+              <p className="footer-col-label">Company</p>
+              <Link href="/about" className="footer-col-link">About Us</Link>
+              <Link href="/blog" className="footer-col-link">Blog</Link>
+              <Link href="/contact" className="footer-col-link">Contact Us</Link>
+              <Link href="/#faq" className="footer-col-link">FAQ</Link>
+            </div>
+            <div className="footer-col">
+              <p className="footer-col-label">Quick Links</p>
+              <Link href="/#why-choose-us" className="footer-col-link">Why Choose Us</Link>
+              <Link href="/#how-it-works" className="footer-col-link">How It Works</Link>
+              <Link href="/contact" className="footer-col-link">Get a Quote</Link>
+              <Link href="/contact" className="footer-col-link">Track Shipment</Link>
+            </div>
+            <div className="footer-col">
+              <p className="footer-col-label">Legal</p>
+              <Link href="/terms" className="footer-col-link">Terms &amp; Conditions</Link>
+              <Link href="/privacy" className="footer-col-link">Privacy Policy</Link>
             </div>
           </div>
-        </div>
 
-        <div className="footer-divider" />
-
-        {/* ── MID ROW: 3 link columns ── */}
-        <div className="footer-mid-row">
-          <div className="footer-col">
-            <p className="footer-col-label">Services</p>
-            <Link href="/services/ocean-freight"       className="footer-col-link">Ocean Freight</Link>
-            <Link href="/services/air-freight"          className="footer-col-link">Air Freight</Link>
-            <Link href="/services/customs-clearance"    className="footer-col-link">Customs Clearance</Link>
-            <Link href="/services/container-cargo"      className="footer-col-link">Container Cargo</Link>
-            <Link href="/services/export-documentation" className="footer-col-link">Export Documentation</Link>
-            <Link href="/services/supply-chain"         className="footer-col-link">Supply Chain</Link>
-          </div>
-          <div className="footer-col">
-            <p className="footer-col-label">Company</p>
-            <Link href="/about"       className="footer-col-link">About Us</Link>
-            <Link href="/blog"        className="footer-col-link">Blog</Link>
-            <Link href="/contact"     className="footer-col-link">Contact Us</Link>
-            <Link href="/contact#faq" className="footer-col-link">FAQ</Link>
-          </div>
-          <div className="footer-col">
-            <p className="footer-col-label">Legal</p>
-            <Link href="/terms"   className="footer-col-link">Terms &amp; Conditions</Link>
-            <Link href="/privacy" className="footer-col-link">Privacy Policy</Link>
-          </div>
         </div>
 
         <div className="footer-divider" />
 
         <div className="footer-bottom">
           <span>Copyright © <strong>Universal Exports</strong> 2026. All rights reserved.</span>
+          <div className="footer-bottom-links">
+            <Link href="/terms" className="footer-bottom-link">Terms</Link>
+            <Link href="/privacy" className="footer-bottom-link">Privacy</Link>
+          </div>
         </div>
 
       </div>
