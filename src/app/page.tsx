@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import HomeFaq from '@/components/HomeFaq';
 import { SERVICES, POSTS } from '@/lib/data';
+import HeroCarousel from '@/components/HeroCarousel';
 
 export const metadata = {
   title: 'Universal Exports Limited — Reliable Export Solutions',
@@ -162,14 +163,7 @@ export default function HomePage() {
             </span>
           </Link>
         </div>
-        <div className="hero-img-bg">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://images.pexels.com/photos/2226458/pexels-photo-2226458.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt="Container logistics"
-          />
-          <div className="hero-img-ov" />
-        </div>
+        <HeroCarousel />
       </section>
 
       {/* ── PARTNERS ─────────────────────────────────────── */}
