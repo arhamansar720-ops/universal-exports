@@ -1,35 +1,150 @@
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import HeroCarousel from '@/components/HeroCarousel';
+import HomeFaq from '@/components/HomeFaq';
+import { SERVICES, POSTS } from '@/lib/data';
 
 export const metadata = {
   title: 'Universal Exports Limited — Reliable Export Solutions',
-  description: 'Expert export services — Fast, professional, and affordable.',
+  description: 'Expert export services from Nigeria — Fast, professional, and affordable ocean freight, air freight, and customs clearance.',
 };
+
+const PARTNERS = ['Maersk Line', 'MSC', 'CMA CGM', 'DHL Express', 'Bolloré'];
+
+const HOW_IT_WORKS = [
+  {
+    title: 'Get a Clear Cost Estimation',
+    desc: 'Share your cargo details and we respond with a transparent, itemised quote within 2 business hours — no hidden charges.',
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" width="28" height="28">
+        <path d="M6 28V10l10-6 10 6v18H6Z" stroke="rgba(255,255,255,0.8)" strokeWidth="1.5" strokeLinejoin="round"/>
+        <path d="M12 28v-8h8v8" stroke="rgba(255,255,255,0.8)" strokeWidth="1.5" strokeLinejoin="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Peace of Mind',
+    desc: 'Every shipment is fully insured and tracked in real-time. We handle all risk management so you can focus on your business.',
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" width="28" height="28">
+        <path d="M16 4L6 8v10c0 5.5 4.5 10 10 10s10-4.5 10-10V8L16 4Z" stroke="rgba(255,255,255,0.8)" strokeWidth="1.5" strokeLinejoin="round"/>
+        <path d="M11 16l3 3 7-7" stroke="rgba(255,255,255,0.8)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Documentation & Compliance',
+    desc: 'We prepare and file all export documents, customs declarations, and regulatory paperwork — keeping you compliant at every border.',
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" width="28" height="28">
+        <rect x="6" y="4" width="20" height="24" rx="2" stroke="rgba(255,255,255,0.8)" strokeWidth="1.5"/>
+        <path d="M11 10h10M11 15h10M11 20h6" stroke="rgba(255,255,255,0.8)" strokeWidth="1.5" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Fast Processing',
+    desc: 'Our efficient operations minimise delays. We work around the clock to ensure cargo is processed and dispatched on schedule.',
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" width="28" height="28">
+        <circle cx="16" cy="16" r="12" stroke="rgba(255,255,255,0.8)" strokeWidth="1.5"/>
+        <path d="M16 9v7l4 4" stroke="rgba(255,255,255,0.8)" strokeWidth="1.5" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Pickup & Delivery',
+    desc: 'From your warehouse to the destination port — we coordinate inland transport, loading, shipping, and final-mile delivery.',
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" width="28" height="28">
+        <path d="M4 22h24M4 22V12l8-6h12l4 6v10" stroke="rgba(255,255,255,0.8)" strokeWidth="1.5" strokeLinejoin="round"/>
+        <circle cx="10" cy="22" r="3" stroke="rgba(255,255,255,0.8)" strokeWidth="1.5"/>
+        <circle cx="22" cy="22" r="3" stroke="rgba(255,255,255,0.8)" strokeWidth="1.5"/>
+      </svg>
+    ),
+  },
+  {
+    title: '24/7 Support',
+    desc: 'Our team is available around the clock to answer questions, provide real-time updates, and resolve any issues during transit.',
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" width="28" height="28">
+        <path d="M8 12c0-4.4 3.6-8 8-8s8 3.6 8 8c0 6-8 14-8 14S8 18 8 12Z" stroke="rgba(255,255,255,0.8)" strokeWidth="1.5"/>
+        <circle cx="16" cy="12" r="3" stroke="rgba(255,255,255,0.8)" strokeWidth="1.5"/>
+      </svg>
+    ),
+  },
+];
+
+const TESTIMONIALS = [
+  {
+    text: '"Universal Exports transformed how we ship internationally. Their team is professional, responsive, and always delivers on time. We have expanded to 8 new markets thanks to their support."',
+    name: 'Aisha Abubakar',
+    role: 'CEO, Abubakar Textiles',
+    initials: 'AA',
+  },
+  {
+    text: '"Outstanding service from start to finish. The customs clearance process that used to take weeks now takes days. Highly recommended for any business looking to export from West Africa."',
+    name: 'Kwame Mensah',
+    role: 'Director, GoldCoast Commodities',
+    initials: 'KM',
+  },
+  {
+    text: '"We have worked with Universal Exports for 3 years. Their transparent pricing and dedicated support team make them stand out from every other freight forwarder we have tried."',
+    name: 'Fatima Okonkwo',
+    role: 'Operations Manager, Lagos Foods Ltd',
+    initials: 'FO',
+  },
+  {
+    text: '"As a first-time exporter, I was nervous about the complexity. Universal Exports guided me through every step. Now we ship to 12 countries with complete confidence."',
+    name: 'Babatunde Nwosu',
+    role: 'Founder, NwosuAgro Exports',
+    initials: 'BN',
+  },
+];
+
+// First 3 services for the alternating showcase
+const SHOWCASE_SERVICES = [
+  {
+    slug: 'ocean-freight',
+    tag: 'OCEAN FREIGHT',
+    title: 'Ocean Freight Solutions',
+    desc: 'Cost-effective sea shipping for large cargo volumes. We manage full container loads (FCL) and less-than-container loads (LCL) through trusted global shipping lines, ensuring your goods arrive safely and on schedule.',
+    img: 'https://images.pexels.com/photos/2231742/pexels-photo-2231742.jpeg?auto=compress&cs=tinysrgb&w=800',
+  },
+  {
+    slug: 'air-freight',
+    tag: 'AIR FREIGHT',
+    title: 'Air Freight Express',
+    desc: 'Time-critical air cargo solutions with guaranteed delivery windows. Ideal for high-value, perishable, or urgent shipments — we partner with leading airlines for reliable door-to-door service worldwide.',
+    img: 'https://images.pexels.com/photos/3057963/pexels-photo-3057963.jpeg?auto=compress&cs=tinysrgb&w=800',
+  },
+  {
+    slug: 'customs-clearance',
+    tag: 'CUSTOMS CLEARANCE',
+    title: 'Customs Clearance & Compliance',
+    desc: 'Expert handling of all customs documentation, duties, and regulatory compliance — ensuring your shipments clear smoothly at every border with zero delays and full legal compliance.',
+    img: 'https://images.pexels.com/photos/906982/pexels-photo-906982.jpeg?auto=compress&cs=tinysrgb&w=800',
+  },
+];
 
 export default function HomePage() {
   return (
     <>
       <Navbar />
 
-      {/* ── HERO ─────────────────────────────────────────────── */}
+      {/* ── HERO ─────────────────────────────────────────── */}
       <section className="hero-wrap">
         <div className="hero-body">
           <div className="hero-pill">
             <div className="hero-pill-avatars">
-              {[
-                'https://i.pravatar.cc/68?img=12',
-                'https://i.pravatar.cc/68?img=32',
-                'https://i.pravatar.cc/68?img=47',
-                'https://i.pravatar.cc/68?img=5',
-              ].map((src, i) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img key={i} src={src} alt="" />
-              ))}
+              <img src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=60" alt="" />
+              <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=60" alt="" />
+              <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=60" alt="" />
+              <img src="https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=60" alt="" />
             </div>
             <span className="hero-pill-text">
-              <span className="hero-pill-num">20k+</span> Satisfied customer around the globe
+              <span className="hero-pill-num">20k+</span>
+              Satisfied customers around the globe
             </span>
           </div>
           <h1 className="hero-h1">
@@ -47,15 +162,22 @@ export default function HomePage() {
             </span>
           </Link>
         </div>
-        <HeroCarousel />
+        <div className="hero-img-bg">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://images.pexels.com/photos/2226458/pexels-photo-2226458.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            alt="Container logistics"
+          />
+          <div className="hero-img-ov" />
+        </div>
       </section>
 
-      {/* ── PARTNERS ─────────────────────────────────────────── */}
+      {/* ── PARTNERS ─────────────────────────────────────── */}
       <section className="partners-sec">
         <div className="partners-inner">
-          <p className="partners-lbl">We working with more than 500+ companies</p>
+          <p className="partners-lbl">We work with more than 500+ companies worldwide</p>
           <div className="partners-row">
-            {['Maersk Line', 'MSC', 'CMA CGM', 'DHL Express', 'Bolloré'].map((p) => (
+            {PARTNERS.map((p) => (
               <div key={p} className="partner-box">
                 <span className="partner-box-txt">{p}</span>
               </div>
@@ -64,17 +186,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── STATS ────────────────────────────────────────────── */}
+      {/* ── STATS BAR ────────────────────────────────────── */}
       <div className="stats-bar">
         <div className="stats-inner">
           {[
-            { num: '1500+', lbl: 'Clients' },
-            { num: '92%+', lbl: 'Customer Satisfaction' },
-            { num: '24/7', lbl: 'Always Support' },
+            { num: '1500', suf: '+', lbl: 'Clients' },
+            { num: '92%', suf: '+', lbl: 'Customer Satisfaction' },
+            { num: '24/7', suf: '', lbl: 'Always Support' },
           ].map((s, i) => (
             <div key={s.lbl} className="stat-row-item">
               <div className="stat-item">
-                <div className="stat-num">{s.num}</div>
+                <div className="stat-num">{s.num}<span className="accent">{s.suf}</span></div>
                 <div className="stat-lbl">{s.lbl}</div>
               </div>
               {i < 2 && <div className="stat-div" />}
@@ -83,12 +205,12 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* ── ABOUT ─────────────────────────────────────────────── */}
+      {/* ── ABOUT ────────────────────────────────────────── */}
       <section className="about-sec">
         <div className="about-inner">
           <div>
-            <span className="sec-tag">About us</span>
-            <h2 className="sec-h2">With over 15+ years of experience, our team provides top-quality services</h2>
+            <span className="sec-tag">About Us</span>
+            <h2 className="sec-h2">With over 15+ years of experience,<br />our team provides top-quality services</h2>
             <p className="sec-p">
               From port operations to global freight coordination, we provide dependable logistics
               services designed to keep supply chains moving efficiently. Our team is committed to
@@ -96,9 +218,9 @@ export default function HomePage() {
             </p>
             <Link href="/about" className="about-btn">
               More About Us
-              <span className="arrow-circ" style={{ background: '#ffffff' }}>
+              <span className="arrow-circ primary">
                 <svg viewBox="0 0 14 14" fill="none">
-                  <path d="M2 7h10M8 4l3 3-3 3" stroke="#0F110F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2 7h10M8 4l3 3-3 3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </span>
             </Link>
@@ -113,7 +235,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── WHY CHOOSE OUR SERVICES ────────────────────────── */}
+      {/* ── WHY CHOOSE US ────────────────────────────────── */}
       <section className="why-sec" id="why-choose-us">
         <div className="why-inner">
           <div className="why-img-wrap">
@@ -124,8 +246,8 @@ export default function HomePage() {
             />
           </div>
           <div className="why-content">
-            <span className="sec-tag">Why Choose us</span>
-            <h2 className="sec-h2">Why choose our Services</h2>
+            <span className="sec-tag">Why Choose Us</span>
+            <h2 className="sec-h2">Reliable Logistics Solutions Built<br />Around Your Business</h2>
             <p className="sec-p">
               We combine industry expertise, efficient operations, and a customer-focused approach
               to deliver logistics solutions you can depend on — every shipment, every time.
@@ -133,34 +255,35 @@ export default function HomePage() {
             <div className="why-feats">
               <div className="why-feat">
                 <div className="why-feat-icon">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/icons/users.svg" alt="" />
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="20" height="20">
+                    <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </div>
                 <div>
                   <div className="why-feat-title">Professional Team</div>
-                  <div className="why-feat-desc">Our experienced specialists work closely with you to ensure smooth operations, timely communication, and dependable service at every stage.</div>
+                  <div className="why-feat-desc">Our experienced specialists work closely with you to ensure smooth operations and dependable service at every stage.</div>
                 </div>
               </div>
               <div className="why-feat">
                 <div className="why-feat-icon">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/icons/money-bag.svg" alt="" />
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="20" height="20">
+                    <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </div>
                 <div>
                   <div className="why-feat-title">Transparent Pricing</div>
-                  <div className="why-feat-desc">No hidden fees or unexpected costs. We provide clear, competitive pricing so you always know exactly what you are paying for.</div>
+                  <div className="why-feat-desc">No hidden fees or unexpected costs. Clear, competitive pricing so you always know exactly what you pay.</div>
                 </div>
               </div>
               <div className="why-feat">
                 <div className="why-feat-icon">
-                  <svg viewBox="0 0 24 24" fill="none" width="22" height="22">
-                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-                    <path d="M8 12l3 3 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="20" height="20">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
                 <div>
                   <div className="why-feat-title">Backed by Customer Satisfaction</div>
-                  <div className="why-feat-desc">Our 92%+ satisfaction rate reflects our commitment to exceeding expectations — with responsive support, proactive updates, and reliable delivery.</div>
+                  <div className="why-feat-desc">92%+ of our clients rate our service as excellent. We are committed to building long-term relationships, not just transactions.</div>
                 </div>
               </div>
             </div>
@@ -168,7 +291,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── HOW OUR EXPORT SERVICE WORKS ──────────────────── */}
+      {/* ── HOW IT WORKS ─────────────────────────────────── */}
       <section className="how-export-sec" id="how-it-works">
         <div className="how-export-inner">
           <div className="how-export-hdr">
@@ -180,7 +303,7 @@ export default function HomePage() {
                 efficiently and safely across global markets.
               </p>
             </div>
-            <Link href="/services" className="how-export-cta-btn">
+            <Link href="/services/ocean-freight" className="how-export-cta-btn">
               Explore all our services
               <span className="arrow-circ" style={{ background: 'rgba(255,255,255,0.15)' }}>
                 <svg viewBox="0 0 14 14" fill="none">
@@ -189,131 +312,41 @@ export default function HomePage() {
               </span>
             </Link>
           </div>
+
           <div className="how-export-grid">
-            {[
-              {
-                icon: (
-                  <svg viewBox="0 0 32 32" fill="none" width="32" height="32">
-                    <circle cx="16" cy="16" r="15" fill="rgba(255,255,255,0.12)"/>
-                    <path d="M16 9v14M11 13h7a2 2 0 010 4h-6a2 2 0 010 4h8" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
-                  </svg>
-                ),
-                title: 'Get a Clear Cost Estimation',
-                desc: 'Share your cargo details and we respond with a transparent, itemised quote within 2 business hours — no hidden charges.',
-              },
-              {
-                icon: (
-                  <svg viewBox="0 0 32 32" fill="none" width="32" height="32">
-                    <circle cx="16" cy="16" r="15" fill="rgba(255,255,255,0.12)"/>
-                    <path d="M10 16l4 4 8-8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                ),
-                title: 'Peace of Mind',
-                desc: 'Every shipment is fully insured and tracked in real-time. We handle all risk management so you can focus on your business.',
-              },
-              {
-                icon: (
-                  <svg viewBox="0 0 32 32" fill="none" width="32" height="32">
-                    <circle cx="16" cy="16" r="15" fill="rgba(255,255,255,0.12)"/>
-                    <rect x="9" y="10" width="14" height="12" rx="2" stroke="white" strokeWidth="1.8"/>
-                    <path d="M13 10V8h6v2" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
-                    <path d="M13 15h6M13 18h4" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
-                ),
-                title: 'Documentation & Compliance',
-                desc: 'We prepare and file all export documents, customs declarations, and regulatory paperwork — keeping you compliant at every border.',
-              },
-              {
-                icon: (
-                  <svg viewBox="0 0 32 32" fill="none" width="32" height="32">
-                    <circle cx="16" cy="16" r="15" fill="rgba(255,255,255,0.12)"/>
-                    <path d="M8 16h16M20 12l4 4-4 4" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                ),
-                title: 'Fast Processing',
-                desc: 'Our efficient operations minimise delays. We work around the clock to ensure cargo is processed and dispatched on schedule.',
-              },
-              {
-                icon: (
-                  <svg viewBox="0 0 32 32" fill="none" width="32" height="32">
-                    <circle cx="16" cy="16" r="15" fill="rgba(255,255,255,0.12)"/>
-                    <rect x="8" y="12" width="16" height="10" rx="2" stroke="white" strokeWidth="1.8"/>
-                    <path d="M11 12V10a2 2 0 014 0v2M17 12V10a2 2 0 014 0v2" stroke="white" strokeWidth="1.6" strokeLinecap="round"/>
-                  </svg>
-                ),
-                title: 'Pickup & Delivery',
-                desc: 'From your warehouse to the destination port — we coordinate inland transport, loading, shipping, and final-mile delivery.',
-              },
-              {
-                icon: (
-                  <svg viewBox="0 0 32 32" fill="none" width="32" height="32">
-                    <circle cx="16" cy="16" r="15" fill="rgba(255,255,255,0.12)"/>
-                    <path d="M16 9v7l4 4" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                    <circle cx="16" cy="16" r="7" stroke="white" strokeWidth="1.8"/>
-                  </svg>
-                ),
-                title: '24/7 Support',
-                desc: 'Our team is available around the clock to answer questions, provide real-time updates, and resolve any issues during transit.',
-              },
-            ].map((item) => (
-              <div key={item.title} className="how-export-card">
-                <div className="how-export-icon">{item.icon}</div>
-                <h3 className="how-export-title">{item.title}</h3>
-                <p className="how-export-desc">{item.desc}</p>
+            {HOW_IT_WORKS.map((card) => (
+              <div key={card.title} className="how-export-card">
+                <div className="how-export-icon">{card.icon}</div>
+                <div className="how-export-title">{card.title}</div>
+                <div className="how-export-desc">{card.desc}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── OUR EXPORT SERVICES (alternating image/text) ─── */}
+      {/* ── EXPORT SERVICES (showcase) ────────────────────── */}
       <section className="export-svc-sec">
         <div className="export-svc-inner">
           <div className="sec-center">
             <span className="sec-tag">Our Services</span>
-            <h2 className="sec-h2">Our Export Services</h2>
-            <p className="sec-p" style={{ margin: '0 auto' }}>
-              From quick arrangements to full logistics management, we provide reliable solutions for every export need.
-            </p>
+            <h2 className="sec-h2">Export Solutions Just For Your Business</h2>
+            <p className="sec-p">Reliable export services that help your goods move smoothly across global markets.</p>
           </div>
-          {[
-            {
-              title: 'Export your stuff',
-              subtitle: 'Ocean Freight',
-              desc: 'Cost-effective sea shipping for large cargo volumes. We manage full container loads (FCL) and less-than-container loads (LCL) across all major global trade lanes with full tracking.',
-              img: 'https://images.pexels.com/photos/906982/pexels-photo-906982.jpeg?auto=compress&cs=tinysrgb&w=800',
-              href: '/services/ocean-freight',
-              reverse: false,
-            },
-            {
-              title: 'Export your stuff',
-              subtitle: 'Air Freight',
-              desc: 'Time-critical air cargo solutions with guaranteed delivery windows. Ideal for high-value, perishable, or urgent goods requiring fast international transit.',
-              img: 'https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg?auto=compress&cs=tinysrgb&w=800',
-              href: '/services/air-freight',
-              reverse: true,
-            },
-            {
-              title: 'Export your stuff',
-              subtitle: 'Customs Clearance',
-              desc: 'Expert handling of all customs documentation, duties, and regulatory compliance — ensuring your shipments clear smoothly at every border with zero delays.',
-              img: 'https://images.pexels.com/photos/4481259/pexels-photo-4481259.jpeg?auto=compress&cs=tinysrgb&w=800',
-              href: '/services/customs-clearance',
-              reverse: false,
-            },
-          ].map((svc) => (
-            <div key={svc.href} className={`export-svc-row${svc.reverse ? ' reverse' : ''}`}>
+
+          {SHOWCASE_SERVICES.map((svc, i) => (
+            <div key={svc.slug} className={`export-svc-row${i % 2 !== 0 ? ' reverse' : ''}`}>
               <div className="export-svc-img-wrap">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={svc.img} alt={svc.subtitle} />
+                <img src={svc.img} alt={svc.title} />
               </div>
-              <div className="export-svc-content">
-                <span className="sec-tag">{svc.subtitle}</span>
-                <h3 className="export-svc-title">{svc.title}</h3>
+              <div>
+                <span className="sec-tag">{svc.tag}</span>
+                <h2 className="export-svc-title">{svc.title}</h2>
                 <p className="export-svc-desc">{svc.desc}</p>
-                <Link href={svc.href} className="export-svc-btn">
+                <Link href={`/services/${svc.slug}`} className="export-svc-btn">
                   Learn More
-                  <span className="arrow-circ primary">
+                  <span className="arrow-circ dark">
                     <svg viewBox="0 0 14 14" fill="none">
                       <path d="M2 7h10M8 4l3 3-3 3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
@@ -322,6 +355,12 @@ export default function HomePage() {
               </div>
             </div>
           ))}
+
+          <div style={{ textAlign: 'center', marginTop: '48px' }}>
+            <Link href="/services/ocean-freight" className="btn-secondary">
+              View All Services →
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -336,29 +375,12 @@ export default function HomePage() {
             </p>
           </div>
           <div className="testi-grid">
-            {[
-              {
-                init: 'AA', name: 'Aisha Abubakar', role: 'CEO, Abubakar Textiles',
-                text: 'Universal Exports transformed how we ship internationally. Their team is professional, responsive, and always delivers on time. We have expanded to 8 new markets thanks to their support.',
-              },
-              {
-                init: 'KM', name: 'Kwame Mensah', role: 'Director, GoldCoast Commodities',
-                text: 'Outstanding service from start to finish. The customs clearance process that used to take weeks now takes days. Highly recommended for any business looking to export from West Africa.',
-              },
-              {
-                init: 'FO', name: 'Fatima Okonkwo', role: 'Operations Manager, Lagos Foods Ltd',
-                text: 'We have worked with Universal Exports for 3 years. Their transparent pricing and dedicated support team make them stand out from every other freight forwarder we have tried.',
-              },
-              {
-                init: 'BN', name: 'Babatunde Nwosu', role: 'Founder, NwosuAgro Exports',
-                text: 'As a first-time exporter, I was nervous about the complexity. Universal Exports guided me through every step. Now we ship to 12 countries with complete confidence.',
-              },
-            ].map((t) => (
+            {TESTIMONIALS.map((t) => (
               <div key={t.name} className="testi-card">
                 <div className="testi-stars">★★★★★</div>
-                <p className="testi-text">&ldquo;{t.text}&rdquo;</p>
+                <p className="testi-text">{t.text}</p>
                 <div className="testi-author">
-                  <div className="testi-av">{t.init}</div>
+                  <div className="testi-av">{t.initials}</div>
                   <div>
                     <div className="testi-name">{t.name}</div>
                     <div className="testi-role">{t.role}</div>
@@ -370,7 +392,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── BLOG / TIPS ──────────────────────────────────── */}
+      {/* ── BLOG PREVIEW ─────────────────────────────────── */}
       <section className="blog-sec">
         <div className="blog-inner">
           <div className="sec-center">
@@ -381,35 +403,16 @@ export default function HomePage() {
             </p>
           </div>
           <div className="blog-grid">
-            {[
-              {
-                tag: 'Export Guide',
-                title: 'How to Prepare Your Export Documentation',
-                desc: 'A step-by-step guide to the essential documents required for international shipping — from commercial invoices to certificates of origin.',
-                img: 'https://images.pexels.com/photos/4386339/pexels-photo-4386339.jpeg?auto=compress&cs=tinysrgb&w=600',
-              },
-              {
-                tag: 'Logistics',
-                title: 'Choosing Between Ocean and Air Freight',
-                desc: 'Understand the trade-offs between sea and air cargo — cost, speed, cargo type, and route considerations to help you make the right choice.',
-                img: 'https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg?auto=compress&cs=tinysrgb&w=600',
-              },
-              {
-                tag: 'Compliance',
-                title: 'Navigating Nigerian Export Regulations',
-                desc: 'Everything you need to know about Nigerian export laws, SON certification, NAFDAC requirements, and NXP compliance for your business.',
-                img: 'https://images.pexels.com/photos/4481259/pexels-photo-4481259.jpeg?auto=compress&cs=tinysrgb&w=600',
-              },
-            ].map((post) => (
-              <Link key={post.title} href="/blog" className="blog-card">
+            {POSTS.slice(0, 3).map((post) => (
+              <Link key={post.id} href={`/blog/${post.id}`} className="blog-card">
                 <div className="blog-card-img-wrap">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={post.img} alt={post.title} />
+                  <img src={post.img} alt={post.title} className="blog-card-img" />
                 </div>
                 <div className="blog-card-body">
-                  <span className="blog-card-tag">{post.tag}</span>
+                  <span className="sec-tag blog-card-tag" style={{ marginBottom: 8 }}>{post.cat}</span>
                   <h3 className="blog-card-title">{post.title}</h3>
-                  <p className="blog-card-desc">{post.desc}</p>
+                  <p className="blog-card-desc">{post.exc}</p>
                   <span className="blog-card-link">Read More →</span>
                 </div>
               </Link>
@@ -418,18 +421,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── CTA — DON'T LET EXPORT PROBLEMS DISRUPT YOUR DAY */}
+      {/* ── IMAGE CTA ────────────────────────────────────── */}
       <section className="img-cta-sec">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="https://images.pexels.com/photos/906982/pexels-photo-906982.jpeg?auto=compress&cs=tinysrgb&w=1600"
-          alt="Container yard and cargo"
-          className="cta-bg"
-        />
+        <img src="https://images.pexels.com/photos/906982/pexels-photo-906982.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Container yard" className="cta-bg" />
         <div className="img-cta-ov" />
         <div className="img-cta-body">
           <h2>Don&apos;t Let Export Problems<br />Disrupt Your Day</h2>
-          <p>Our expert team handles every challenge so your cargo keeps moving — no matter what.</p>
+          <p>Our team is here to make the process simple, efficient, and stress-free.</p>
           <Link href="/contact" className="hero-btn">
             Book a Free Call
             <span className="arrow-circ primary">
@@ -442,49 +441,7 @@ export default function HomePage() {
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────── */}
-      <section className="faq-sec" id="faq">
-        <div className="faq-inner">
-          <div className="sec-center">
-            <span className="sec-tag">Questions &amp; Answers</span>
-            <h2 className="sec-h2">Frequently Asked Questions</h2>
-            <p className="sec-p" style={{ margin: '0 auto' }}>
-              Find answers to the most common questions about our export services and how we work.
-            </p>
-          </div>
-          <div className="faq-list">
-            {[
-              {
-                q: 'What types of cargo do you handle?',
-                a: 'We handle all types of export cargo including agricultural products, manufactured goods, consumer products, industrial equipment, and hazardous materials (with appropriate documentation). Contact us for specialised cargo requirements.',
-              },
-              {
-                q: 'How long does it take to get a quote?',
-                a: 'We respond to all quote requests within 2 business hours. For complex multi-modal shipments, we may require up to 24 hours to provide a fully detailed proposal with all options.',
-              },
-              {
-                q: 'Do you handle customs documentation?',
-                a: 'Yes, we provide complete export documentation services including Form NXP, certificates of origin, commercial invoices, packing lists, and all other regulatory filings required for your destination country.',
-              },
-              {
-                q: 'Which countries do you ship to?',
-                a: 'We ship to over 180 countries worldwide across all major trade lanes. We have established partnerships with agents in Europe, North America, Asia, and the Middle East for seamless door-to-door delivery.',
-              },
-              {
-                q: 'What happens if my cargo is delayed?',
-                a: 'We proactively monitor all shipments and communicate any delays immediately. Our team works to resolve issues quickly, and all shipments are covered by comprehensive cargo insurance for your protection.',
-              },
-            ].map((item, i) => (
-              <details key={i} className="faq-item">
-                <summary className="faq-q">
-                  <span>{item.q}</span>
-                  <span className="faq-arrow">+</span>
-                </summary>
-                <div className="faq-a"><p>{item.a}</p></div>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HomeFaq />
 
       <Footer />
     </>
