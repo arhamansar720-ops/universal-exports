@@ -16,7 +16,7 @@ export default function Footer() {
                 src="/logo.png"
                 alt="Universal Exports (Private) Limited"
                 height={60}
-                style={{ objectFit: 'contain', display: 'block', filter: 'brightness(0) invert(1)' }}
+                style={{ objectFit: 'contain', display: 'block' }}
               />
             </div>
             <p className="footer-brand-desc">
