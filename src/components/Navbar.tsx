@@ -7,7 +7,7 @@ const NAV_LINKS = [
   { label: 'About Us',      href: '/about' },
   { label: 'Why Choose Us', href: '/#why-choose-us' },
   { label: 'How It Works',  href: '/#how-it-works' },
-  { label: 'Our Services',  href: '/services/ocean-freight' },
+  { label: 'Our Services',  href: '/services' },
   { label: 'Blogs',         href: '/blog' },
   { label: 'FAQ',           href: '/contact#faq' },
 ];
@@ -15,8 +15,8 @@ const NAV_LINKS = [
 const ALL_PAGES = [
   { label: 'Home',            href: '/' },
   { label: 'About Us',        href: '/about' },
-  { label: 'Our Services',    href: '/services/ocean-freight' },
-  { label: 'Ocean Freight',   href: '/services/ocean-freight' },
+  { label: 'Our Services',    href: '/services' },
+  { label: 'Ocean Freight',   href: '/services' },
   { label: 'Air Freight',     href: '/services/air-freight' },
   { label: 'Customs Clearance', href: '/services/customs-clearance' },
   { label: 'Blog',            href: '/blog' },
